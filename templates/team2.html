@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block main%}
+<br><br>
+<div class="graph">
+    <h2>Einsendungen pro Monat</h2>
+    <div>{{ fig_sender_html|safe }}</div>
+    <br>
+    <div>{{ fig_indication_html|safe }}</div>
+    <a href="/download/sender" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br>
+{% endblock %}

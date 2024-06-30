@@ -1,0 +1,3 @@
+
+# Queries für die Teams
+

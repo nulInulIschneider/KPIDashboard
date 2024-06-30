@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon-16x16.png') }}" /> 
+    <!-- The emoji graphics are from the open source project Twemoji. The graphics are copyright 2020 Twitter, Inc and other contributors. The graphics are licensed under CC-BY 4.0. You should review the license before usage in your project. -->
+
+    <title>{% block title %}KPI Dashboard{% endblock %}</title>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.beispiel.de/" target="_blank">
+          <img src="/static/img/Logo_schwarz.png" height="50" alt="Logo"/>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav justify-content-start">
+          </div>
+          <div class="navbar-nav justify-content-center flex-grow-1">
+            <!-- Zentraler Link -->
+                    <img src="/static/img/bar-chart_bl.svg" alt="Logo Barchart" id="icon_barchart" />
+                    <a class="nav-link" href="/">
+                        <h1>KPI Dashboard</h1>
+                    </a>
+          </div>
+            <div class="navbar-nav justify-content-end align-items-center dp-fl">
+              <span class="nav-item mr-10 username">
+                {% if 'username' in session %}
+                {{ session['username'] }}<!-- Benutzernamen aus der Session anzeigen -->
+                {% else %}
+                Gast
+                {% endif %}
+              </span>
+              <span class="mr-10">|</span> <!-- Senkrechter Strich als Trennung -->
+              <a class="nav-link pl-0" href="/auth/logout">
+                <img src="/static/img/box-arrow-right.svg" alt="Logo Logout" id="icon_logout" />
+              </a> <!-- Logout-Link -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

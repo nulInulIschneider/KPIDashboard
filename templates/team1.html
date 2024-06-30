@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block main%}
+<br><br>
+<div class="graph">
+    <h2>Analysen pro Monat</h2>
+    <div>{{ fig_html|safe }}</div>
+    <a href="/download/analysis" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br>
+<div class="graph">
+    <h2>Analysen pro Monat Trend</h2>
+    <div>{{ fig_trend_html|safe }}</div>
+</div>
+<br><br>
+<div class="graph">
+    <h2>Ergebnisse pro Monat</h2>
+    <div>{{ fig_results_html|safe }}</div>
+    <a href="/download/results" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br>
+<div class="graph">
+    <h2>Aufträge pro Monat</h2>
+    <div>{{ fig_orders_html|safe }}</div>
+    <a href="/download/orders" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br>
+{% endblock %}

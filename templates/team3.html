@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main%}
+<br><br>
+<div class="graph">
+    <h2>Wartezeiten pro Quartal und Jahr</h2>
+    <div>{{ fig_waiting_time_html|safe }}</div>
+    <a href="/download/waiting_time" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br><br>
+<div class="graph">
+    <h2>Beratungen allgemein</h2>
+    <div>{{ fig_consultations_monthly_html|safe }}</div>
+    <!-- <a href="/download/consultation" class="btn btn-primary btn-mhh">Download CSV</a> -->
+    <br>
+    <div>{{ fig_consultations_year_html|safe }}</div>
+    <a href="/download/orders" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br><br>
+<div class="graph">
+    <h2>Familienberatungen</h2>
+    <div>{{ fig_fam_histo_html|safe }}</div>
+    <br>
+    <div>{{ fig_fam_violin_html|safe }}</div>
+    <br>
+    <div>{{ fig_fam_scatter_html|safe }}</div>
+    <a href="/download/family" class="btn btn-primary btn-mhh">Download CSV</a>
+</div>
+<br><br>
+{% endblock %}
